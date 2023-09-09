@@ -22,7 +22,7 @@ dev_dependencies:
   flutter_lints: ^2.0.0
 
 flutter:
-  user-material-design: true  
+  uses-material-design: true  
 
 
 
