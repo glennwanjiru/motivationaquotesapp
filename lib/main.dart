@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         title: 'Namer App',
         theme: ThemeData(
           useMaterial3: true,
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrange),
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.amber),
         ),
         home: MyHomePage(),
       ),
@@ -63,7 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
         page = GeneratorPage();
         break;
       case 1:
-        page = Placeholder();
+        page = FavoritePage();
         break;
       default:
         throw UnimplementedError('No widget for $selectedIndex');
@@ -195,7 +195,7 @@ class FavoritePage extends StatelessWidget {
       children: [
         Padding(
           padding: const EdgeInsets.all(20),
-          child: Text('you have' '${appState.favorites.length} favorites'),
+          child: Text('You have ' '${appState.favorites.length} favorites'),
         ),
         for (var pair in appState.favorites)
           ListTile(
