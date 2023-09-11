@@ -51,6 +51,7 @@ class MyHomePage extends StatelessWidget {
     var appState = context.watch<MyAppState>();
     var pair = appState.current;
 
+//Heart Toggle Method Icon Function
     IconData icon;
     if (appState.favorites.contains(pair)) {
       icon = Icons.favorite;
@@ -70,18 +71,21 @@ class MyHomePage extends StatelessWidget {
             Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                ElevatedButton(
-                  onPressed: () {
-                    appState.getNext();
-                  },
-                  child: Text('Next'),
-                ),
                 ElevatedButton.icon(
                   onPressed: () {
                     appState.toggleFavorites();
                   },
                   icon: Icon(icon),
-                  child: Text('Like'),
+                  label: Text('Like'),
+                ),
+                SizedBox(
+                  width: 20,
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    appState.getNext();
+                  },
+                  child: Text('Next'),
                 ),
               ],
             ),
