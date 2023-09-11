@@ -38,7 +38,7 @@ class MyHomePage extends StatelessWidget {
       body: Column(
         children: [
           Text('A random awe some idea:'),
-          Text(appState.current.asLowerCase),
+          Text(appState.current.asPascalCase),
           ElevatedButton(
             onPressed: () {
               print('Button Pressed!');
