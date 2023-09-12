@@ -3,6 +3,7 @@
 import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:motivationaquotesapp/motivational_quotes.dart';
 
 void main() {
   runApp(MyApp());
@@ -163,6 +164,7 @@ class GeneratorPage extends StatelessWidget {
   Widget build(BuildContext context) {
     var appState = context.watch<MyAppState>();
     var pair = appState.current;
+    var quote = MotivationalQuotes.getRandomQuote();
 
     IconData icon;
     if (appState.favorites.contains(pair)) {
