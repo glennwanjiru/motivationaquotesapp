@@ -2,6 +2,8 @@
 
 import 'dart:math';
 
+import 'package:flutter/material.dart';
+
 class MotivationalQuotes {
   static List<String> _quotes = [
     "The only way to do great work is to love what you do. - Steve Jobs",
@@ -11,6 +13,8 @@ class MotivationalQuotes {
     "The only limit to our realization of tomorrow will be our doubts of today. - Franklin D. Roosevelt",
     // Add more quotes here
   ];
+  List<String> motivationalquotes = _quotes;
+  var favorites = List<_quotes>[];
 
   static String getRandomQuote() {
     final random = Random();

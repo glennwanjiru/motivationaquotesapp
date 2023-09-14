@@ -29,16 +29,16 @@ class MyApp extends StatelessWidget {
 }
 
 class MyAppState extends ChangeNotifier {
-  var current = WordPair.random();
+  var current = MotivationalQuotes.getRandomQuote();
   var history = <WordPair>[];
 
   GlobalKey? historyListKey;
 
   void getNext() {
-    history.insert(0, current);
-    var animatedList = historyListKey?.currentState as AnimatedListState?;
-    animatedList?.insertItem(0);
-    current = WordPair.random();
+    // history.insert(0, current);
+    // var animatedList = historyListKey?.currentState as AnimatedListState?;
+    // animatedList?.insertItem(0);
+    current = MotivationalQuotes.getRandomQuote();
     notifyListeners();
   }
 
@@ -130,7 +130,7 @@ class _MyHomePageState extends State<MyHomePage> {
               children: [
                 SafeArea(
                   child: NavigationRail(
-                    extended: constraints.maxWidth >= 600,
+                    // extended: constraints.maxWidth >= 600,
                     destinations: [
                       NavigationRailDestination(
                         icon: Icon(Icons.home),
@@ -182,7 +182,7 @@ class GeneratorPage extends StatelessWidget {
           ),
           SizedBox(height: 10),
           BigCard(pair: pair),
-          SizedBox(height: 10),
+          SizedBox(height: 80),
           Row(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -193,7 +193,7 @@ class GeneratorPage extends StatelessWidget {
                 icon: Icon(icon),
                 label: Text('Like'),
               ),
-              SizedBox(width: 10),
+              SizedBox(width: 30),
               ElevatedButton(
                 onPressed: () {
                   appState.getNext();
@@ -236,13 +236,12 @@ class BigCard extends StatelessWidget {
             child: Wrap(
               children: [
                 Text(
-                  pair.first,
-                  style: style.copyWith(fontWeight: FontWeight.w200),
+                  MotivationalQuotes.getRandomQuote(),
+                  style: style.copyWith(
+                    fontWeight: FontWeight.w200,
+                    fontSize: 20,
+                  ),
                 ),
-                Text(
-                  pair.second,
-                  style: style.copyWith(fontWeight: FontWeight.bold),
-                )
               ],
             ),
           ),
@@ -334,7 +333,7 @@ class _HistoryListViewState extends State<HistoryListView> {
       // This blend mode takes the opacity of the shader (i.e. our gradient)
       // and applies it to the destination (i.e. our animated list).
       blendMode: BlendMode.dstIn,
-      child: AnimatedList(
+      /*  child: AnimatedList(
         key: _key,
         reverse: true,
         padding: EdgeInsets.only(top: 100),
@@ -359,7 +358,7 @@ class _HistoryListViewState extends State<HistoryListView> {
             ),
           );
         },
-      ),
+      ),*/
     );
   }
 }
