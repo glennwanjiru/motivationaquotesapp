@@ -13,8 +13,10 @@ class MotivationalQuotes {
     "The only limit to our realization of tomorrow will be our doubts of today. - Franklin D. Roosevelt",
     // Add more quotes here
   ];
-  List<String> motivationalquotes = _quotes;
-  var favorites = List<_quotes>[];
+
+  MotivationalQuotes() {
+    var motivationalquotes = _quotes;
+  }
 
   static String getRandomQuote() {
     final random = Random();

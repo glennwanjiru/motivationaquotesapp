@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyAppState extends ChangeNotifier {
-  var current = MotivationalQuotes.getRandomQuote();
+  var current = WordPair.random();
   var history = <WordPair>[];
 
   GlobalKey? historyListKey;
@@ -38,7 +38,7 @@ class MyAppState extends ChangeNotifier {
     // history.insert(0, current);
     // var animatedList = historyListKey?.currentState as AnimatedListState?;
     // animatedList?.insertItem(0);
-    current = MotivationalQuotes.getRandomQuote();
+    current = WordPair.random();
     notifyListeners();
   }
 
