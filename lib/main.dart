@@ -2,14 +2,10 @@
 
 import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
-import 'package:hive_flutter/hive_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:motivationaquotesapp/motivational_quotes.dart';
 
-void main() async {
-  await Hive.initFlutter();
-  var box = await Hive.openBox('mybox');
-
+void main() {
   runApp(MyApp());
 }
 
@@ -65,18 +61,6 @@ class MyAppState extends ChangeNotifier {
 }
 
 class MyHomePage extends StatefulWidget {
-//reference our Box
-  final _mybox = Hive.box('mybox');
-
-//write data method
-  void writeData() {}
-
-//read data method
-  void readData() {}
-
-//delete data method
-  void deleteData() {}
-
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
@@ -94,7 +78,7 @@ class _MyHomePageState extends State<MyHomePage> {
         page = GeneratorPage();
         break;
       case 1:
-        page = FavoritesPage();
+        page = GeneratorPage();
         break;
       default:
         throw UnimplementedError('no widget for $selectedIndex');
@@ -127,8 +111,8 @@ class _MyHomePageState extends State<MyHomePage> {
                         label: 'Home',
                       ),
                       BottomNavigationBarItem(
-                        icon: Icon(Icons.favorite),
-                        label: 'Favorites',
+                        icon: Icon(Icons.backspace),
+                        label: 'Reset',
                       ),
                     ],
                     currentIndex: selectedIndex,
@@ -202,13 +186,13 @@ class GeneratorPage extends StatelessWidget {
           Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              ElevatedButton.icon(
+              /* ElevatedButton.icon(
                 onPressed: () {
                   appState.toggleFavorite();
                 },
                 icon: Icon(icon),
                 label: Text('Like'),
-              ),
+              ),*/
               SizedBox(width: 30),
               ElevatedButton(
                 onPressed: () {
