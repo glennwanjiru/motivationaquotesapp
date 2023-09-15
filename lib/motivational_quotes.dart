@@ -11,17 +11,17 @@ class MotivationalQuotes {
     "Don't watch the clock; do what it does. Keep going. - Sam Levenson",
     "Success is not final, failure is not fatal: It is the courage to continue that counts. - Winston Churchill",
     "The only limit to our realization of tomorrow will be our doubts of today. - Franklin D. Roosevelt",
+    "You Suck",
+    "This app sucks",
+    "Stop Skipping Ads"
     // Add more quotes here
   ];
 
-  MotivationalQuotes() {
-    
-  }
+  MotivationalQuotes() {}
 
   static String getRandomQuote() {
     final random = Random();
     final index = random.nextInt(_quotes.length);
     return _quotes[index];
   }
-  
 }
