@@ -14,8 +14,8 @@ class MotivationalQuotes {
     // Add more quotes here
   ];
 
-  MotivationalQuotes() {
-    var motivationalquotes = _quotes;
+  MotivationalQuotes(var motQuotes) {
+    var motQuotes = _quotes;
   }
 
   static String getRandomQuote() {

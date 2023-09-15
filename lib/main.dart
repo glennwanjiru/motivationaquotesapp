@@ -2,10 +2,14 @@
 
 import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:motivationaquotesapp/motivational_quotes.dart';
 
-void main() {
+void main() async {
+  await Hive.initFlutter();
+  var box = await Hive.openBox('mybox');
+
   runApp(MyApp());
 }
 
@@ -61,6 +65,18 @@ class MyAppState extends ChangeNotifier {
 }
 
 class MyHomePage extends StatefulWidget {
+//reference our Box
+  final _mybox = Hive.box('mybox');
+
+//write data method
+  void writeData() {}
+
+//read data method
+  void readData() {}
+
+//delete data method
+  void deleteData() {}
+
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
