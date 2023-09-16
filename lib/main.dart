@@ -137,7 +137,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         label: Text('Home'),
                       ),
                       NavigationRailDestination(
-                        icon: Icon(Icons.favorite),
+                        icon: Icon(Icons.backspace),
                         label: Text('Favorites'),
                       ),
                     ],
@@ -238,7 +238,7 @@ class BigCard extends StatelessWidget {
                 Text(
                   MotivationalQuotes.getRandomQuote(),
                   style: style.copyWith(
-                    fontWeight: FontWeight.w200,
+                    fontWeight: FontWeight.w600,
                     fontSize: 20,
                   ),
                 ),
