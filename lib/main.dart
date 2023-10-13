@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         title: 'Daily Random Quotes',
         theme: ThemeData(
           useMaterial3: true,
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         ),
         home: MyHomePage(),
       ),
@@ -193,7 +193,7 @@ class GeneratorPage extends StatelessWidget {
                 icon: Icon(icon),
                 label: Text('Like'),
               ),*/
-              SizedBox(width: 30),
+              SizedBox(width: 40),
               ElevatedButton(
                 onPressed: () {
                   appState.getNext();
